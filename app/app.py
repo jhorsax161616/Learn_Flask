@@ -1,6 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
+
+@app.before_request
+def before_request():
+    print('Before the request')
+
+
+@app.after_request
+def after_request(response):
+    print('After the request')
+
+    return response
 
 
 @app.route('/')
@@ -46,6 +57,14 @@ def languages():
         'languages': ['PHP', 'Python', 'Kotlin', 'Java', 'C#', 'JavaScript']
     }
     return render_template('languages.html', data=data)
+
+@app.route('/multext')
+def multext():
+    #GET method: /multext?text=Curry&mult=10
+    text :str = request.args.get('text')
+    mult :int = int(request.args.get('mult'))
+
+    return 'Your expanded text by {0} is: {1}'.format(mult, (text + ' ') * mult)
 
 
 def helloWorld():
