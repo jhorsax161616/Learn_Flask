@@ -1,0 +1,38 @@
+header {
+    background-color: black;
+    color: aliceblue;
+}
+
+body {
+    font-style: normal;
+}
+
+footer {
+    font-size: 0.2 rem;
+    background-color: black;
+    color: aliceblue;
+}
+
+header p {
+    text-decoration: underline;
+    font-size: 1.5 rem;
+}
+
+span:hover {
+    color: coral;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+}
+
+.caja:hover {
+    background-color: aqua;
+    transform: rotate(20deg);
+}
+
+.contact {
+    color: aqua;
+    font-size: 30px;
+}
