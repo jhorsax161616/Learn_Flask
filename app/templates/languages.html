@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <ul>
+        {% if data.available %}
+        {% for lang in data.languages %}
+        <li>
+            {{ lang }}
+        </li>
+        {% endfor %}
+        {% else %}
+        <h2>Languages' not available now...</h2>
+        {% endif %}
+    </ul>
+{% endblock %}
